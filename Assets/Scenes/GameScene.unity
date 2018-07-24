@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 141824089}
   - component: {fileID: 141824088}
   - component: {fileID: 141824090}
+  - component: {fileID: 141824091}
   m_Layer: 0
   m_Name: LeftPaddle
   m_TagString: Untagged
@@ -227,6 +228,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &141824091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141824086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8008a1d06a296964eab032cc1d50eb93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHorizontal: 0
 --- !u!1 &350947541
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballSpeed: {x: 0, y: 0}
+  ballSpeedFactor: 0.4
 --- !u!212 &1050842218
 SpriteRenderer:
   m_ObjectHideFlags: 0
