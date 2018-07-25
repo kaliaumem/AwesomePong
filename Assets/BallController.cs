@@ -16,4 +16,10 @@ public class BallController : MonoBehaviour {
         Vector3 s3 = ballSpeed;
         transform.position += s3 * ballSpeedFactor;
 	}
+
+    public void PutBackAtCenter()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        ballSpeed = Random.insideUnitCircle;
+    }
 }
