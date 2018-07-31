@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public static GameManager Instance { get; private set; }
 
     public Text Player1ScoreLabel;
@@ -27,12 +25,12 @@ public class GameManager : MonoBehaviour {
     public void FlipBallDirection(bool isXAxis)
     {
         GameObject ball = GameObject.Find("ball");
-        if(ball != null)
+        if (ball != null)
         {
             BallController ballController = ball.GetComponent<BallController>();
-            if(ballController != null)
+            if (ballController != null)
             {
-                if(isXAxis)
+                if (isXAxis)
                 {
                     ballController.ballSpeed.x = -ballController.ballSpeed.x;
                 }
@@ -72,4 +70,3 @@ public class GameManager : MonoBehaviour {
         }
     }
 }
-

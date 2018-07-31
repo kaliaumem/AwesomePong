@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RaquetteController : MonoBehaviour {
+public class RaquetteController : MonoBehaviour
+{
 
     public float Speed;
 
     Vector3 direction;
 
     // Use this for initialization
-	void Start () {
+    void Start()
+    {
         direction = new Vector3(0, 0, 0);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             direction = new Vector3(0, 1, 0);
@@ -25,7 +26,7 @@ public class RaquetteController : MonoBehaviour {
             direction = new Vector3(0, 0, 0);
 
         Vector3 newPosition = transform.position + direction * Speed;
-        if(newPosition.y <= 4.0 && newPosition.y >= -4.0)
+        if (newPosition.y <= 4.0 && newPosition.y >= -4.0)
             transform.position += direction * Speed;
-	}
+    }
 }

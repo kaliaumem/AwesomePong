@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Wall : MonoBehaviour {
+public class Wall : MonoBehaviour
+{
     public bool isHorizontal;
     public bool shouldScoreForPlayer1;
     public bool shouldScoreForPlayer2;
