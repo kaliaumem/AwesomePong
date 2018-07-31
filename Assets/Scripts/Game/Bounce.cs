@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Wall : MonoBehaviour
+public class Bounce : MonoBehaviour
 {
     public bool isHorizontal;
     public bool shouldScoreForPlayer1;
@@ -8,7 +8,6 @@ public class Wall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Miaou");
         if (isHorizontal)
             GameManager.Instance.FlipBallDirection(false);
         else
