@@ -14,8 +14,8 @@ public class Bounce : MonoBehaviour
             GameManager.Instance.FlipBallDirection(true);
 
         if (shouldScoreForPlayer1)
-            GameManager.Instance.ScorePlayer1();
+            GameManager.Instance.IncreaseScorePlayer(true);
         else if (shouldScoreForPlayer2)
-            GameManager.Instance.ScorePlayer2();
+            GameManager.Instance.IncreaseScorePlayer(false);
     }
 }

@@ -16,10 +16,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         ball = GameObject.FindObjectOfType<BallController>();
-    }
-
-    private void Update()
-    {
         Player1ScoreLabel.SetText(Player1Score.ToString());
         Player2ScoreLabel.SetText(Player2Score.ToString());
     }
@@ -35,17 +31,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ScorePlayer1()
+    public void IncreaseScorePlayer(bool player1)
     {
-        Player1Score++;
+        if (player1)
+        {
+            Player1Score++;
+            Player1ScoreLabel.SetText(Player1Score.ToString());
+        }
+        else
+        {
+            Player2Score++;
+            Player2ScoreLabel.SetText(Player2Score.ToString());
+        }
         if (ball != null)
             ball.PutBackAtCenter();
-    }
+        }
 
-    public void ScorePlayer2()
-    {
-        Player2Score++;
-        if (ball != null)
-            ball.PutBackAtCenter();
-    }
 }
