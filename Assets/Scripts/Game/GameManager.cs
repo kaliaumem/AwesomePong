@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI Player1ScoreLabel;
     public TMPro.TextMeshProUGUI Player2ScoreLabel;
+    public float timeBeforeBallMoves = 1.0f;
 
     private BallController ball;
     private int Player1Score;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         ball = GameObject.FindObjectOfType<BallController>();
         Player1ScoreLabel.SetText(Player1Score.ToString());
         Player2ScoreLabel.SetText(Player2Score.ToString());
+        Invoke("LaunchBall", timeBeforeBallMoves);
     }
 
     public void FlipBallDirection(bool isXAxis)
@@ -44,7 +46,14 @@ public class GameManager : MonoBehaviour
             Player2ScoreLabel.SetText(Player2Score.ToString());
         }
         if (ball != null)
+        {
             ball.PutBackAtCenter();
+            Invoke("LaunchBall", timeBeforeBallMoves);
         }
+    }
 
+    private void LaunchBall()
+    {
+        ball.moving = true;
+    }
 }
