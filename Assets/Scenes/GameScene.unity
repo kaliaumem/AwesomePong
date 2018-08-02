@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98806707}
-  - component: {fileID: 98806710}
+  - component: {fileID: 98806709}
   - component: {fileID: 98806708}
   m_Layer: 9
   m_Name: Bottom
@@ -157,8 +157,8 @@ MonoBehaviour:
   isHorizontal: 1
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &98806710
-EdgeCollider2D:
+--- !u!61 &98806709
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -169,11 +169,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02, y: -0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.02}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.12, y: -0.32}
-  - {x: 0.12, y: -0.32}
 --- !u!1 &236177499
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +399,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 300
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fb31143584fa684588d82d5b9742ce3, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 885bcaa484984d348a9c0142e8b16e44, type: 2}
@@ -459,7 +467,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 599472855}
-    characterCount: 3
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -500,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 657511949}
-  - component: {fileID: 657511952}
+  - component: {fileID: 657511951}
   - component: {fileID: 657511950}
   m_Layer: 9
   m_Name: Right
@@ -536,8 +544,8 @@ MonoBehaviour:
   isHorizontal: 0
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &657511952
-EdgeCollider2D:
+--- !u!61 &657511951
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -548,11 +556,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.025, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.63}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.12, y: 0.32}
-  - {x: 0.12, y: -0.32}
 --- !u!1 &837972821
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballSpeed: {x: 0, y: 0}
   ballSpeedFactor: 0.4
+  moving: 0
 --- !u!212 &1050842218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -883,8 +900,8 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1639810367}
-  - {fileID: 2013441559}
   - {fileID: 1993192042}
+  - {fileID: 2013441559}
   m_Father: {fileID: 876196686}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -955,7 +972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242350915}
-  - component: {fileID: 1242350918}
+  - component: {fileID: 1242350917}
   - component: {fileID: 1242350916}
   m_Layer: 9
   m_Name: Top
@@ -991,8 +1008,8 @@ MonoBehaviour:
   isHorizontal: 1
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &1242350918
-EdgeCollider2D:
+--- !u!61 &1242350917
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1003,11 +1020,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02, y: 0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.02}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.12, y: 0.32}
-  - {x: 0.12, y: 0.32}
 --- !u!1 &1320048095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,8 +1274,8 @@ MonoBehaviour:
   isHorizontal: 1
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &1639810369
-EdgeCollider2D:
+--- !u!61 &1639810369
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1261,11 +1286,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02, y: 0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.02}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.12, y: 0.32}
-  - {x: 0.12, y: 0.32}
 --- !u!1 &1798171321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1196339431}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1993192043
 MonoBehaviour:
@@ -1628,8 +1661,8 @@ MonoBehaviour:
   isHorizontal: 1
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &1993192044
-EdgeCollider2D:
+--- !u!61 &1993192044
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1640,11 +1673,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02, y: -0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.02}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.12, y: -0.32}
-  - {x: 0.12, y: -0.32}
 --- !u!1 &2005369149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1ScoreLabel: {fileID: 2031527282}
   Player2ScoreLabel: {fileID: 599472855}
+  timeBeforeBallMoves: 1
 --- !u!4 &2005369151
 Transform:
   m_ObjectHideFlags: 0
@@ -1715,7 +1757,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1196339431}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2013441560
 MonoBehaviour:
@@ -1731,8 +1773,8 @@ MonoBehaviour:
   isHorizontal: 0
   shouldScoreForPlayer1: 0
   shouldScoreForPlayer2: 0
---- !u!68 &2013441561
-EdgeCollider2D:
+--- !u!61 &2013441561
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1743,11 +1785,19 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.025, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.63}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.12, y: 0.32}
-  - {x: -0.12, y: -0.32}
 --- !u!1 &2031527280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1802,7 +1852,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 300
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7fb31143584fa684588d82d5b9742ce3, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 885bcaa484984d348a9c0142e8b16e44, type: 2}
@@ -1870,7 +1920,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2031527282}
-    characterCount: 3
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
