@@ -10,25 +10,18 @@ public class Paddle : MonoBehaviour
 
     private Vector3 direction = Vector3.zero;
     private Vector3 tmpPosition;
-    private string upInput;
-    private string downInput;
+    private string input;
 
-    // Set the input names to use
+    // Set the input name to use
     private void Awake()
     {
-        upInput = (Side == PaddleSide.LEFT) ? "Left Up" : "Right Up";
-        downInput = (Side == PaddleSide.LEFT) ? "Left Down" : "Right Down";
+        input = (Side == PaddleSide.LEFT) ? "Left Paddle" : "Right Paddle";
     }
 
-    // Handle the inputs then move the paddle if not too high or low
+    // Handle the inputs then move the paddle if not too high nor too low
     private void Update()
     {
-        if (Input.GetButtonDown(upInput))
-            direction = new Vector3(0.0f, 1.0f, 0.0f);
-        else if (Input.GetButtonDown(downInput))
-            direction = new Vector3(0.0f, -1.0f, 0.0f);
-        else if (Input.GetButtonUp(upInput) || Input.GetButtonUp(downInput))
-            direction = Vector3.zero;
+        direction.y = Input.GetAxis(input);
 
         tmpPosition = transform.position + direction * Speed;
         if (tmpPosition.y <= 4.0 && tmpPosition.y >= -4.0)
