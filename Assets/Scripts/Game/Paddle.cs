@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
+public enum PaddleSide { LEFT, RIGHT };
+
 public class Paddle : MonoBehaviour
 {
-    enum PaddleSide { LEFT, RIGHT };
 
     // enum to use the correct input names depending on the side the paddle is on
     [SerializeField] private PaddleSide Side;
@@ -18,7 +19,7 @@ public class Paddle : MonoBehaviour
         input = (Side == PaddleSide.LEFT) ? "Left Paddle" : "Right Paddle";
     }
 
-    // Handle the inputs then move the paddle if not too high nor too low
+    // Handle the input then move the paddle if not too high nor too low
     private void Update()
     {
         direction.y = Input.GetAxis(input);

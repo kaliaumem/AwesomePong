@@ -1,24 +1,57 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public TMPro.TextMeshProUGUI Player1ScoreLabel;
-    public TMPro.TextMeshProUGUI Player2ScoreLabel;
-    public float timeBeforeBallMoves = 1.0f;
+    [SerializeField] private TMPro.TextMeshProUGUI winnerText;
+    [SerializeField] private float timeBeforeBallMoves = 1.0f;
+    [SerializeField] private UnityEvent newGameEvent;
 
     private BallController ball;
-    private int Player1Score;
-    private int Player2Score;
+    private ScoreManager scoreManager;
 
     private void Awake()
     {
         Instance = this;
         ball = GameObject.FindObjectOfType<BallController>();
-        Player1ScoreLabel.SetText(Player1Score.ToString());
-        Player2ScoreLabel.SetText(Player2Score.ToString());
+        scoreManager = GetComponent<ScoreManager>();
+    }
+
+    // Start a game
+    public void Play()
+    {
+        if (ball == null)
+            return;
+        // Reset scores and score texts
+        scoreManager.NewGame();
+        // Reset the ball
+        NewRound();
+    }
+
+    // End a game
+    // Name the winner to see on the game settings menu
+    public void GameOver(PaddleSide winner)
+    {
+        if (ball == null)
+            return;
+        ball.PutBackAtCenter();
+        if (winner == PaddleSide.LEFT)
+            winnerText.SetText("Last game winner: <color=#2932ff>Player 1</color>");
+        else
+            winnerText.SetText("Last game winner: <color=#ff2f35>Player 2</color>");
+        newGameEvent.Invoke(); // Unity events so some logic can be modified directly in the editor
+    }
+
+    // New round
+    // Place the ball in the center and wait 1 second (or whatever timeBeforeBallMoves is) before launching it
+    public void NewRound()
+    {
+        if (ball == null)
+            return;
+        ball.PutBackAtCenter();
         Invoke("LaunchBall", timeBeforeBallMoves);
     }
 
@@ -33,23 +66,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void IncreaseScorePlayer(bool player1)
+    public void IncreaseScorePlayer(PaddleSide player)
     {
-        if (player1)
-        {
-            Player1Score++;
-            Player1ScoreLabel.SetText(Player1Score.ToString());
-        }
-        else
-        {
-            Player2Score++;
-            Player2ScoreLabel.SetText(Player2Score.ToString());
-        }
-        if (ball != null)
-        {
-            ball.PutBackAtCenter();
-            Invoke("LaunchBall", timeBeforeBallMoves);
-        }
+        // Score is handled in the ScoreManager object so pass the information to it
+        scoreManager.IncreaseScore(player);
     }
 
     private void LaunchBall()
