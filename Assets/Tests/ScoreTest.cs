@@ -10,6 +10,9 @@ public class ScoreTest : UITest
     {
         yield return LoadScene("GameScene");
 
+        yield return WaitFor(new ObjectAppeared<GameManager>());
+        GameManager.Instance.Play();
+
         yield return WaitFor(new ObjectAppeared("Canvas/Layout Restrictor/Score/Player 1"));
         yield return WaitFor(new ObjectAppeared("Canvas/Layout Restrictor/Score/Player 2"));
         
@@ -21,14 +24,15 @@ public class ScoreTest : UITest
 
         Assert.AreEqual(playerScore1.text, "0");
         Assert.AreEqual(playerScore2.text, "0");
-
-        yield return null;
     }
 
     [UnityTest]
     public IEnumerator TestIncreaseScorePlayer1()
     {
         yield return LoadScene("GameScene");
+
+        yield return WaitFor(new ObjectAppeared<GameManager>());
+        GameManager.Instance.Play();
 
         yield return WaitFor(new ObjectAppeared<BallController>());
 
@@ -47,6 +51,9 @@ public class ScoreTest : UITest
     {
         yield return LoadScene("GameScene");
 
+        yield return WaitFor(new ObjectAppeared<GameManager>());
+        GameManager.Instance.Play();
+
         yield return WaitFor(new ObjectAppeared<BallController>());
 
         BallController ball = Object.FindObjectOfType<BallController>();
@@ -64,6 +71,9 @@ public class ScoreTest : UITest
     {
         yield return LoadScene("GameScene");
 
+        yield return WaitFor(new ObjectAppeared<GameManager>());
+        GameManager.Instance.Play();
+
         yield return WaitFor(new ObjectAppeared<BallController>());
 
         BallController ball = Object.FindObjectOfType<BallController>();
@@ -80,6 +90,9 @@ public class ScoreTest : UITest
     public IEnumerator TestBounceAndGoalInFavorOfPlayer2()
     {
         yield return LoadScene("GameScene");
+
+        yield return WaitFor(new ObjectAppeared<GameManager>());
+        GameManager.Instance.Play();
 
         yield return WaitFor(new ObjectAppeared<BallController>());
 

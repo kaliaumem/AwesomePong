@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private TMPro.TextMeshProUGUI winnerText;
+    public TMPro.TextMeshProUGUI winnerText;
     [SerializeField] private float timeBeforeBallMoves = 1.0f;
     [SerializeField] private UnityEvent newGameEvent;
 
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             winnerText.SetText("Last game winner: <color=#2932ff>Player 1</color>");
         else
             winnerText.SetText("Last game winner: <color=#ff2f35>Player 2</color>");
+        winnerText.gameObject.SetActive(true);
         newGameEvent.Invoke(); // Unity events so some logic can be modified directly in the editor
     }
 
