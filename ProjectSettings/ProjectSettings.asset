@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Kolibree
   productName: AwesomeDemoProject
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -271,7 +271,7 @@ PlayerSettings:
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
-  playModeTestRunnerEnabled: 0
+  playModeTestRunnerEnabled: 1
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
   enableInternalProfiler: 0
